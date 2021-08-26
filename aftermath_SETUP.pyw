@@ -11,8 +11,8 @@
 
 # REQUIREMENTS
 
-from genericpath import exists
 from os import name, getenv, startfile, remove
+from os.path import exists
 from webbrowser import open as wbopen
 from subprocess import check_output, CalledProcessError
 
