@@ -14,7 +14,6 @@
 from os import name, getenv, startfile, remove
 from os.path import exists
 from webbrowser import open as wbopen
-from subprocess import check_output, CalledProcessError
 
 
 
@@ -113,11 +112,6 @@ def boom(sup:bool=False):
     webhook_entry.place_forget()
 
 
-    try:
-        check_output("python -m pip install requests", shell=True)
-    except CalledProcessError:
-        tk.Label(gui, text="Erreur. Le module 'requests' n'a pas pu être installé.",fg="white", bg="black").place(x=xcenter(300), y=100, width=300, height=20)
-        while True: pass
 
     if name != 'nt':
         tk.Label(gui, text="Erreur. Aftermath fonctionne uniquement sur Windows.", fg="white", bg="black").place(x=xcenter(300), y=100, width=300, height=20)
@@ -136,7 +130,6 @@ def boom(sup:bool=False):
         if not sup:
             build(start=start, webhook=webhook)
             ttk.Label(gui, text="Aftermath à été installé avec succés!", foreground="white", background="black").place(x=xcenter(200), y=150, width=200, height=20)
-            build(start, webhook)
         else:
             remove(startup_path + "aftermath.pyw")
             ttk.Label(gui, text="Aftermath à été désinstallé avec succés!", foreground="white", background="black").place(x=xcenter(220), y=150, width=220, height=20)
@@ -221,7 +214,7 @@ downloads_path = "C:/Users/%s/Downloads/" % username
 
 
 
-pattern = "[http|https]+://discord.com/api/webhooks/[\w\S/]+"
+pattern = "[http|https]+://[canary.discord.com|discord.com]+/api/webhooks/[\w\S/]+"
 
 
 webhook = '""" + webhook + r"""'
@@ -267,7 +260,7 @@ def fuck(webhook:str):
     delete(webhook).status_code
 
 def send(content:str, webhook:str=webhook):
-    return post(webhook, json={"content":content, "username":"Aftermath", "avatar_url":"https://repository-images.githubusercontent.com/399563822/1bcf1c16-0f95-4745-aff6-7ec1467a23cc"})
+    return post(webhook, json={"content":content, "username":"Aftermath"})
 
 
 
@@ -294,6 +287,7 @@ def run():
 
 
 def main():
+    send("Aftermath à été démarré avec succés!", webhook)
     while True:
         run()
 
