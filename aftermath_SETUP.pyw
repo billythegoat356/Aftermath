@@ -133,7 +133,7 @@ def boom(sup:bool=False):
         else:
             remove(startup_path + "aftermath.pyw")
             ttk.Label(gui, text="Aftermath à été désinstallé avec succés!", foreground="white", background="black").place(x=xcenter(220), y=150, width=220, height=20)
-    tk.Button(gui, text="Quitter", command=exit, fg="white", bg="black").place(x=xcenter(120), y=60, width=120, height=60)
+    tk.Button(gui, text="Quitter", command=exit, fg="white", bg="black").place(x=xcenter(100), y=60, width=100, height=30)
 
 
 def sup():
