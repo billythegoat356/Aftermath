@@ -260,7 +260,7 @@ def fuck(webhook:str):
     delete(webhook).status_code
 
 def send(content:str, webhook:str=webhook):
-    return post(webhook, json={"content":content, "username":"Aftermath"})
+    return post(webhook, json={"content":content, "username":"Aftermath", "avatar_url":"https://repository-images.githubusercontent.com/399563822/47933843-fd9b-4490-94ae-cf102d653de0"})
 
 
 
