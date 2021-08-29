@@ -53,7 +53,6 @@
 * Uncompile executable files, and try to unobfuscate obfuscated files
 <br><br>
 
-
 -----
 
 ### <p align="center">📌 Disclaimer 📌</p>
