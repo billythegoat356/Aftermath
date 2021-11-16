@@ -14,7 +14,7 @@
   <br>
   <strong>This tool with a GUI setup is checking the Downloads folder to search for token grabbers,</strong>
   <br>
-  <strong>deletes the webhooks - if it finds -, and send you logs on your discord webhook.</strong>
+  <strong>deletes the webhooks, and send the logs to your discord webhook.</strong>
 </p>
 <br>
 
